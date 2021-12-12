@@ -1,7 +1,10 @@
 # Simple Blog
 
-Spring Boot로 만든 간단한 블로그 입니다. 
-<img src="/docs/blogMain.gif" width="500">
+<p align="center">
+  Spring Boot로 만든 간단한 블로그 입니다. 
+  <br></br>
+  <img src="/docs/blogMain.gif" width="1000">
+</p>
 <br></br>
 
 
