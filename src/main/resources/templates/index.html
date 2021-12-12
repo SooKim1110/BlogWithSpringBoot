@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="common/head.html"></head>
+<body>
+<div class="container">
+    <header class="blog-header" th:insert="common/header.html"></header>
+    <div class="jumbotron p-3 p-md-5 text-secondary bg-white align-items-center border-bottom border-secondary">
+        <h1 class="blog-title">Jisoo's Blog</h1>
+    </div>
+    <div class="row float-right">
+        <button class="btn btn-dark mr-4 mb-5" type="button" onclick="location.href='/write'">새 글 작성</button>
+    </div>
+    <article class="mx-5 my-5 px-3 py-3">
+        <div class="my-5" th:each="post, i: ${posts}">
+            <h1><a class="index-post-title" th:href="@{/posts/{postId}(postId=${post.id})}" th:text="${post.title}"></a>
+            </h1>
+            <p class="index-post-date" th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></p>
+            <p><a class="index-post-content" th:href="@{/posts/{postId}(postId=${post.id})}"
+                  th:text="${#strings.abbreviate(post.content,1200)} "></a></p>
+            <hr>
+        </div>
+    </article>
+    <nav aria-label="Page navigation" class="paging">
+        <ul class="pagination justify-content-center" th:if="${page.totalPages > 1}">
+            <li class="page-item" th:classappend="${page.prevEnabled? '' : 'disabled'}">
+                <a class="page-link" th:href="@{'/?pageIdx=' + ${page.endIdx -5}}">Previous</a>
+            </li>
+            <th:block th:each="idx: ${#numbers.sequence(page.startIdx, page.endIdx)}">
+                <li class="page-item" th:classappend="${idx == page.pageIdx? 'active' : ''}">
+                    <a class="page-link" th:href="@{'/?pageIdx=' + ${idx}}" th:text="${idx}"></a>
+                </li>
+            </th:block>
+            <li class="page-item" th:classappend="${page.nextEnabled? '' : 'disabled'}">
+                <a class="page-link" th:href="@{'/?pageIdx=' + ${page.startIdx + 5}}">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<footer th:insert="common/footer.html"></footer>
+</body>
+</html>

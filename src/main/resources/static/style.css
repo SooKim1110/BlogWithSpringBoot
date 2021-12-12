@@ -1,0 +1,66 @@
+textarea{
+    resize: none;
+}
+
+.blog-header {
+  line-height: 1;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.edit-form {
+    display: inline;
+    vertical-align:top;
+}
+
+.index-post-title {
+    color: black;
+    font-family: 'Playfair Display', serif;
+}
+
+h2 {
+ font-family: 'Playfair Display', serif;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    white-space: pre-wrap;
+}
+
+.index-post-date {
+    color: Gray
+}
+
+.index-post-content {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.post-content {
+  min-height: 500px;
+}
+
+.blog-title {
+  font-size: 60px;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+}
+.pagination > .active > a
+{
+    color: white;
+    background-color: LightSlateGray !Important;
+    border: solid 1px LightSlateGray !Important;
+}
+
+.pagination > li > a
+{
+    background-color: white;
+    color: LightSlateGray;
+}
+
+footer{
+position: relative;
+}
